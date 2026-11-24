@@ -1,0 +1,17 @@
+{
+  "name": "k6-quickpizza-testing",
+  "version": "1.0.0",
+  "description": "Grafana k6 test suite for the QuickPizza application",
+  "scripts": {
+    "app:start": "docker compose up -d",
+    "app:stop": "docker compose down",
+    "test:smoke": "k6 run tests/01-smoke-api.js",
+    "test:auth": "k6 run tests/02-auth-functional.js",
+    "test:pizza": "k6 run tests/03-pizza-recommendation.js",
+    "test:e2e": "k6 run tests/04-e2e-user-journey.js",
+    "test:load": "k6 run tests/05-load.js",
+    "test:stress": "k6 run tests/06-stress.js",
+    "test:all": "k6 run tests/01-smoke-api.js && k6 run tests/02-auth-functional.js && k6 run tests/03-pizza-recommendation.js && k6 run tests/04-e2e-user-journey.js"
+  },
+  "license": "MIT"
+}
